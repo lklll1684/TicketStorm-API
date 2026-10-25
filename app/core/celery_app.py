@@ -16,9 +16,7 @@ celery_app.conf.update(
 
 @celery_app.task
 def generate_and_send_ticket_pdf(ticket_id: int, user_email: str):
-    """
-    имитация генерации пдф и отправки на почту за 15 секунд
-    """
+
     print(f"[CELERY] генерируем PDF билета #{ticket_id} для {user_email}...")
     time.sleep(5)
     print(f"[CELERY] PDF создан и отправлен на почту {user_email}")
